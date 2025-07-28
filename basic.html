@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --primary-color: #2563eb;
+            --primary-light: #3b82f6;
+            --success-color: #10b981;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --border-radius:12px;
+            --box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Seoge UI',sans-serif,'Open sans';
+        }
+        body{
+            background-color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .bank-container{
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        .bank-header{
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .bank-header h1{
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        .bank-content{
+            padding: 30px;
+        }
+        .balance-card{
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        .balance-title{
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .balance-amount{
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .actions{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .btn{
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 16px 0;
+            font-size: 1rem;
+            font-weight:600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+        }
+        .btn:active{
+            transform: translateY(2px);
+        }
+        .btn-deposit{
+            background-color: var(--success-color);
+            color: white;
+        }
+        .btn-withdraw{
+            background-color: var(--danger-color);
+            color:white;
+        }
+        .btn-icon{
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        .transaction-history{
+            margin-top: 30px;
+
+        }
+        .transaction-history h2{
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        @media (max-width: 480px){
+            .bank-content{
+                padding:25px 20px;
+            }
+            .balance-amount{
+                font-size: 1.8rem;
+            }
+            .actions{
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bank-container">
+        <div class="bank-header">
+            <h1>Personal Banking</h1>
+
+        </div>
+        <div class="bank-content">
+            <div class="balance-card">
+                <div class="balance-title">Available Balance</div>
+                <div class="balance-amount">$12,345</div>
+            </div>
+            <div class="actions">
+                <button class="btn btn-deposit">
+                    <span class="btn-icon">+</span>
+                    <span>Kindly withraw</span>
+                </button>
+            </div>
+            <div class="transaction-history">
+                <h2>Your recent expenditure record</h2>
+                <div class="empty-state"></div>
+                <p style="text-align: center;color: #64748b; margin-top:10px;">Congrats you saved your money without spending it. Hence, no transaction hostory</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
